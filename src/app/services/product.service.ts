@@ -20,7 +20,7 @@ export class ProductService {
   }
 
   createProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.apiUrl, product);
+    return this.http.post<Product>(this.apiUrl, new Product(product.name, product.price, product.description));
   }
 
   updateProduct(id: number, product: Product): Observable<Product> {

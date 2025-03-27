@@ -43,7 +43,7 @@ export class ProductComponent implements OnInit {
     }
   }
 
-  deleteProduct(id: number): void {
-    this.productService.deleteProduct(id).subscribe(() => this.loadProducts());
+  deleteProduct(id: number|undefined): void {
+    if (id) this.productService.deleteProduct(id).subscribe(() => this.loadProducts());
   }
 }
